@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<table class="ui celled table">
+<thead>
+    <tr>
+      <th><strong>Descricao:</strong></th>
+      <th><strong>Acron:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @tipo_mineracao.descricao %></td>
+      <td><%= @tipo_mineracao.acron %></td>
+    </tr>
+  </tbody>
+
+<%= link_to 'Editar', edit_tipo_mineracao_path(@tipo_mineracao), class:"ui primary button" %> |
+<%= link_to 'Voltar', tipo_mineracaos_path, class:"ui button" %>

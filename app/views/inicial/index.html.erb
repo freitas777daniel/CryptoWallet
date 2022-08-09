@@ -1,0 +1,12 @@
+<h1>Seja Bem Vindo</h1>
+<p> <strong>Data:</strong> 
+ <%= l Date.today %>
+</p>
+
+<!-- isso é uma partials, ele esta chamando o menu porque o arquivo tem _menu-->
+
+<%= render "menu" %>
+
+<p>
+   Você está em ambiente de <strong><%= t Rails.env %></strong>
+</p>

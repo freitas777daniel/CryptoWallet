@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Moedas</h1>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th>Acronimo</th>
+      <th>Imagem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moedas.each do |moeda| %>
+      <tr>
+        <td><%= moeda.descricao %></td>
+        <td><%= moeda.acron %></td>
+        <td><%= image_tag moeda.url_img, size:"30x30" %> </td>
+        <td class="ui small basic icon buttons">
+        <%= link_to moeda, class: 'ui button' do %>
+          <i class="file icon"></i>
+        <% end %>
+        <%= link_to edit_moeda_path(moeda), class: 'ui button' do %>
+        <i class="edit icon"></i>
+        <% end %>
+        <%= link_to moeda, method: :delete, data: { confirm: 'Tem Certeza?' }, class: 'ui button' do %>
+        <i class="trash icon"></i>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Cadastrar Moeda', new_moeda_path, class:"positive ui button" %>
+
+<br>
+
+<div class="paginate">
+<%= will_paginate @moedas %>
+</div>

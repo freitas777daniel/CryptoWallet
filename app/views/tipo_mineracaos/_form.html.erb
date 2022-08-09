@@ -1,0 +1,35 @@
+<%= form_with(model: tipo_mineracao, local: true) do |form| %>
+  <% if tipo_mineracao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tipo_mineracao.errors.count, "error") %> prohibited this tipo_mineracao from being saved:</h2>
+
+      <ul>
+      <% tipo_mineracao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+  </div>
+
+  <div class="ui input">
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acron %>
+  </div>
+
+  <div class="ui input">
+    <%= form.text_field :acron %>
+  </div>
+
+  <br></br>
+
+  <div class="actions">
+    <%= form.submit 'Salvar', class:"positive ui button" %>
+  </div>
+<% end %>

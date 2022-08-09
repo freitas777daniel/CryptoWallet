@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8"/>
+    <title>CryptoWallet</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <% if current_user %>
+    <div style="text-align: right;">
+    <%= current_user.email %>  
+    <%= link_to session_path("current"), method: "delete", class:"botao ui button"  do %>
+      <i class="power off icon"></i> Sair
+    <% end %>
+    </div>
+  <% else %>
+  <%= link_to new_user_path, class:"ui button"  do %>
+    <i class="user icon"></i> Inscreva-se
+  <% end %>
+  <%= link_to new_session_path, class:"ui button"  do %>
+    <i class="user icon"></i> Login
+  <% end %>
+  <% end %>
+
+    <div class="ui divider"></div>
+  <div class="ui menu">
+    <a href="/"><h1>Cadastro de CryptoWallet</h1></a>
+  </div>
+  <div class="ui divider"></div>
+    <%= yield %>
+  </body>
+</html>

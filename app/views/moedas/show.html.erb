@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<table class="ui celled table">
+<thead>
+    <tr>
+      <th><strong>Descricao:</strong></th>
+      <th><strong>Acron:</strong></th>
+      <th><strong>Url img:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @moeda.descricao %></td>
+      <td><%= @moeda.acron %></td>
+      <td><%= image_tag @moeda.url_img, size:"30x30" %></td>
+    </tr>
+  </tbody>
+
+<%= link_to 'Editar', edit_moeda_path(@moeda), class:"ui primary button" %> |
+<%= link_to 'Voltar', moedas_path, class:"ui button" %>
